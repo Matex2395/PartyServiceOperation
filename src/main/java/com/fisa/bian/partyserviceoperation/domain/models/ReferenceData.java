@@ -1,0 +1,40 @@
+package com.fisa.bian.partyserviceoperation.domain.models;
+
+import java.time.LocalDate;
+import java.util.UUID;
+
+public record ReferenceData(
+        String instanceId,      // ID propio del BQ
+        String identityNumber,  // RUT/DNI
+        String identityType,    // 'RUT', 'PASAPORTE'
+        String fullLegalName,
+        LocalDate dateOfBirth,
+        String emailAddress,
+        String phoneNumber,
+        String addressLine,
+        String countryCode
+) {
+    // Factory para crear uno nuevo con ID generado
+    public static ReferenceData createNew(
+            String identityNumber,
+            String identityType,
+            String fullLegalName,
+            LocalDate dateOfBirth,
+            String emailAddress,
+            String phoneNumber,
+            String addressLine,
+            String countryCode) {
+
+        return new ReferenceData(
+                UUID.randomUUID().toString(), // Aquí se genera el UUID del BQ
+                identityNumber,
+                identityType,
+                fullLegalName,
+                dateOfBirth,
+                emailAddress,
+                phoneNumber,
+                addressLine,
+                countryCode
+        );
+    }
+}

@@ -1,4 +1,4 @@
-package com.fisa.partyserviceoperation;
+package com.fisa.bian.partyserviceoperation;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.boot.test.context.SpringBootTest;
