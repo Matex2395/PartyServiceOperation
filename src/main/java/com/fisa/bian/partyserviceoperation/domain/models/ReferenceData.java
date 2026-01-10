@@ -5,16 +5,19 @@ import java.util.UUID;
 
 public record ReferenceData(
         String instanceId,      // ID propio del BQ
-        String identityNumber,  // RUT/DNI
+        String identityNumber,  // RUT
         String identityType,    // 'RUT', 'PASAPORTE'
         String fullLegalName,
         LocalDate dateOfBirth,
         String emailAddress,
         String phoneNumber,
         String addressLine,
+        String townName,
+        String postCode,
+        // -------------------------------
         String countryCode
 ) {
-    // Factory para crear uno nuevo con ID generado
+    // Factory actualizado para recibir los nuevos parámetros
     public static ReferenceData createNew(
             String identityNumber,
             String identityType,
@@ -23,10 +26,12 @@ public record ReferenceData(
             String emailAddress,
             String phoneNumber,
             String addressLine,
+            String townName,
+            String postCode,
             String countryCode) {
 
         return new ReferenceData(
-                UUID.randomUUID().toString(), // Aquí se genera el UUID del BQ
+                UUID.randomUUID().toString(), // Generamos UUID del BQ aquí
                 identityNumber,
                 identityType,
                 fullLegalName,
@@ -34,6 +39,8 @@ public record ReferenceData(
                 emailAddress,
                 phoneNumber,
                 addressLine,
+                townName,
+                postCode,
                 countryCode
         );
     }

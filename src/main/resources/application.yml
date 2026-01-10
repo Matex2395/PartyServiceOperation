@@ -1,0 +1,32 @@
+spring:
+  application:
+    name: party-service-operation
+  datasource:
+    url: jdbc:sqlserver://localhost:1433;databaseName=BIAN_SEMANTIC_DB;encrypt=true;trustServerCertificate=true
+    username: MateoSA
+    password: empanada123
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+  jpa:
+    hibernate:
+      ddl-auto: none
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+
+# Configuracion del Mapper Legacy
+legacy:
+  api:
+    url: http://localhost:8081 # Puerto donde se ejecuta el proyecto Mapper
+
+# Configuracion de Resilience4j
+resilience4j:
+  circuitbreaker:
+    instances:
+      legacyCore:
+        registerHealthIndicator: true
+        slidingWindowSize: 10        # Analiza las ultimas 10 llamadas
+        minimumNumberOfCalls: 5      # Minimo 5 llamadas para decidir
+        failureRateThreshold: 50     # Si el 50% fallan, abre el circuito
+        waitDurationInOpenState: 10s # Espera 10s antes de reintentar
+        permittedNumberOfCallsInHalfOpenState: 3

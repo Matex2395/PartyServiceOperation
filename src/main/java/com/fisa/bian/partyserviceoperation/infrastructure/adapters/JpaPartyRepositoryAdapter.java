@@ -10,7 +10,6 @@ import org.springframework.stereotype.Component;
 
 import java.util.Optional;
 
-@Component
 @RequiredArgsConstructor // Lombok genera el constructor para inyección de dependencias
 public class JpaPartyRepositoryAdapter implements PartyRepositoryPort {
 
