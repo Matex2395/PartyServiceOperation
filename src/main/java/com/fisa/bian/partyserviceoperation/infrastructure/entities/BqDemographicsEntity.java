@@ -22,12 +22,12 @@ public class BqDemographicsEntity {
     @JoinColumn(name = "PARTY_REF_ID", referencedColumnName = "PARTY_REF_ID", nullable = false)
     private CrDirectoryEntryEntity directoryEntry;
 
-    @Column(name = "EDUCATION_LEVEL", length = 50)
+    @Column(name = "EDUCATION_LEVEL", nullable = false, length = 50)
     private String educationLevel;
 
-    @Column(name = "OCCUPATION_CODE", length = 50)
+    @Column(name = "OCCUPATION_CODE", nullable = false, length = 50)
     private String occupationCode;
 
-    @Column(name = "MARITAL_STATUS_CODE", length = 20)
+    @Column(name = "MARITAL_STATUS_CODE", nullable = false, length = 20)
     private String maritalStatusCode;
 }

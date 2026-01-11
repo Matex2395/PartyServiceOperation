@@ -25,10 +25,16 @@ public class ApplicationConfig {
     }
 
     // 2. Wiring del Adaptador Legacy (Manual)
+    // MOCKED
     @Bean
-    public LegacySystemPort legacySystemPort(RestClient.Builder restClientBuilder, LegacyIntegrationMapper mapper) {
-        return new RestLegacySystemAdapter(restClientBuilder, mapper);
+    public LegacySystemPort legacySystemPort() { // Sin argumentos
+        return new RestLegacySystemAdapter(); // Constructor vacío (agrégalo a la clase o usa @NoArgsConstructor)
     }
+    //REAL
+//    @Bean
+//    public LegacySystemPort legacySystemPort(RestClient.Builder restClientBuilder, LegacyIntegrationMapper mapper) {
+//        return new RestLegacySystemAdapter(restClientBuilder, mapper);
+//    }
 
     // 3. Wiring del Caso de Uso (Manual)
     @Bean

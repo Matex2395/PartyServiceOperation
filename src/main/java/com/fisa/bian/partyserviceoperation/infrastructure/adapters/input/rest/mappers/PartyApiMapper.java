@@ -8,6 +8,8 @@ import com.fisa.bian.partyserviceoperation.infrastructure.adapters.input.rest.dt
 import com.fisa.bian.partyserviceoperation.infrastructure.adapters.input.rest.dtos.ReferenceDataDto;
 import org.mapstruct.Mapper;
 
+import java.util.Locale;
+
 @Mapper(componentModel = "spring")
 public interface PartyApiMapper {
 
@@ -35,7 +37,10 @@ public interface PartyApiMapper {
                 dto.getAddressLine(),
                 dto.getTownName(),
                 dto.getPostCode(),
-                dto.getCountryCode()
+                dto.getCountryCode(),
+                dto.getIdentityExpiryDate(),
+                dto.getNationalityCode(),
+                dto.getGenderCode()
         );
     }
 

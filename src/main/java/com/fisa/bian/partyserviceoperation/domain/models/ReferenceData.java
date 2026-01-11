@@ -14,8 +14,10 @@ public record ReferenceData(
         String addressLine,
         String townName,
         String postCode,
-        // -------------------------------
-        String countryCode
+        String countryCode,
+        LocalDate identityExpiryDate,
+        String nationalityCode,
+        String genderCode
 ) {
     // Factory actualizado para recibir los nuevos parámetros
     public static ReferenceData createNew(
@@ -28,7 +30,10 @@ public record ReferenceData(
             String addressLine,
             String townName,
             String postCode,
-            String countryCode) {
+            String countryCode,
+            LocalDate identityExpiryDate,
+            String nationalityCode,
+            String genderCode) {
 
         return new ReferenceData(
                 UUID.randomUUID().toString(), // Generamos UUID del BQ aquí
@@ -41,7 +46,10 @@ public record ReferenceData(
                 addressLine,
                 townName,
                 postCode,
-                countryCode
+                countryCode,
+                identityExpiryDate,
+                nationalityCode,
+                genderCode
         );
     }
 }

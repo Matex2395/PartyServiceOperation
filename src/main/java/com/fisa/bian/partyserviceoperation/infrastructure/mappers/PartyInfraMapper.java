@@ -28,12 +28,7 @@ public interface PartyInfraMapper {
 
     // 1. ReferenceData -> BqReferenceEntity
     @Mapping(target = "refInstanceId", source = "instanceId")
-    @Mapping(target = "directoryEntry", ignore = true) // Se asigna en el código Java (relación bidireccional)
-    @Mapping(target = "identityExpiryDate", ignore = true) // TODO: Añadir al dominio si hace falta
-    @Mapping(target = "nationalityCode", ignore = true)
-    @Mapping(target = "genderCode", ignore = true)
-    @Mapping(target = "townName", ignore = true)
-    @Mapping(target = "postCode", ignore = true)
+    @Mapping(target = "directoryEntry", ignore = true) // Se asigna en el código Java manualmente (relación bidireccional)
     BqReferenceEntity toReferenceEntity(ReferenceData data);
 
     @Mapping(target = "instanceId", source = "refInstanceId")
