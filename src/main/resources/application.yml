@@ -1,3 +1,6 @@
+server:
+    port: 8090
+
 spring:
   application:
     name: party-service-operation
@@ -17,7 +20,7 @@ spring:
 # Configuracion del Mapper Legacy
 legacy:
   api:
-    url: http://localhost:8081 # Puerto donde se ejecuta el proyecto Mapper
+    url: http://localhost:8080 # Puerto donde se ejecuta el proyecto Mapper
 
 # Configuracion de Resilience4j
 resilience4j:
