@@ -40,7 +40,7 @@ public class BqReferenceEntity {
     @Column(name = "DATE_OF_BIRTH", nullable = false)
     private LocalDate dateOfBirth;
 
-    @Column(name = "NATIONALITY_CODE", nullable = false, length = 3)
+    @Column(name = "NATIONALITY_CODE", nullable = false, length = 2)
     private String nationalityCode;
 
     @Column(name = "GENDER_CODE", length = 1)
@@ -53,7 +53,7 @@ public class BqReferenceEntity {
     @Column(name = "TOWN_NAME", nullable = false, length = 70)
     private String townName;
 
-    @Column(name = "COUNTRY_CODE", nullable = false, length = 3)
+    @Column(name = "COUNTRY_CODE", nullable = false, length = 2)
     private String countryCode;
 
     @Column(name = "POST_CODE", length = 16)

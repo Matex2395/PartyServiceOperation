@@ -16,6 +16,7 @@ public interface PartyInfraMapper {
     @Mapping(target = "referenceEntity", source = "referenceData")
     @Mapping(target = "demographicsEntity", source = "demographics")
     @Mapping(target = "lastUpdateDate", ignore = true) // Se gestiona en updates
+    @Mapping(target = "partyType", constant = "Person")
     CrDirectoryEntryEntity toEntity(Party party);
 
     // Mapeo inverso (Entity -> Party) para lecturas
