@@ -33,3 +33,19 @@ resilience4j:
         failureRateThreshold: 50     # Si el 50% fallan, abre el circuito
         waitDurationInOpenState: 10s # Espera 10s antes de reintentar
         permittedNumberOfCallsInHalfOpenState: 3
+
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus # Habilitar endpoint /actuator/prometheus
+  metrics:
+    tags:
+      application: ${spring.application.name} # Identificar de quien proviene la informacion en Grafana
+
+  tracing:
+    sampling:
+      probability: 1.0
+    otlp:
+      tracing:
+        endpoint: http://localhost:4318/v1/traces
