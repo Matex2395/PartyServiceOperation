@@ -18,7 +18,7 @@ public class ReferenceDataDto {
 
     @NotNull(message = "Date of Birth is required") // @NotNull para objetos LocalDate
     @Past(message = "Date of birth must be in the past")
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate dateOfBirth;
 
     @NotBlank(message = "Nationality Code is required")
@@ -32,7 +32,7 @@ public class ReferenceDataDto {
     @Pattern(regexp = "^[A-Z]{2}$", message = "Country Code must be ISO Alpha-2 (2 chars)")
     private String countryCode;
 
-    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy")
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate identityExpiryDate; // Opcional en BD
 
     @Pattern(regexp = "^[M|F|O]$", message = "Gender must be M, F or O")
