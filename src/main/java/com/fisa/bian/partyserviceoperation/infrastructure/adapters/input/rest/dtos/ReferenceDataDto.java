@@ -35,7 +35,7 @@ public class ReferenceDataDto {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     private LocalDate identityExpiryDate; // Opcional en BD
 
-    @Pattern(regexp = "^[M|F|O]$", message = "Gender must be M, F or O")
+    @Pattern(regexp = "^[M|F]$", message = "Gender must be M or F")
     private String genderCode; // Opcional en BD
 
     private String addressLine; // Opcional en BD
